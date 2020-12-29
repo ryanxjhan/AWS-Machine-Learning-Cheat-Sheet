@@ -28,10 +28,6 @@
 
    AWS Lake Formation is a service that makes it easy to set up a secure data lake in days. 
 
-* With Lake Formation, you can move, store, catalog, and clean your data faster.
-* You can use Lake Formation to centrally define security, governance, and auditing policies in one place.
-* With Lake Formation you build a data catalog that describes the different data sets that are available along with which groups of users have access to each.
-
 ![3](img/3.png)
 
 2. *AWS S3*
