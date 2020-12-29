@@ -9,7 +9,7 @@
   * [Data Repositories](#repo)
   * [Data Ingestion](#ingest)
   * [Data Transformation](#transform)
-* 
+* [Exploratory Data Analysis](#eda)
 
 <a name="overview"/>
 
@@ -41,13 +41,14 @@
 
 ![2](img/2.png)
 
-| Storage Classes | Use cases                              | Availability Zones | Access  Time     |
-| --------------- | -------------------------------------- | ------------------ | ---------------- |
-| S3 Standard     | For active, frequently accessed data   | >= 3               | Milliseconds     |
-| S3 INT          | For data with changing access patterns | >= 3               | Milliseconds     |
-| S3 S-IA         | For infrequently accessed data         | >= 3               | Milliseconds     |
-| S3 1Z-IA        | For re-creatable, less accessde data   | 1                  | Milliseconds     |
-| Amazon Glacier  | For archive data                       | >=3                | Minutes or hours |
+| Storage Classes      | Use cases                              | Availability Zones | Access  Time     |
+| -------------------- | -------------------------------------- | ------------------ | ---------------- |
+| S3 Standard          | For active, frequently accessed data   | >= 3               | Milliseconds     |
+| S3 INT               | For data with changing access patterns | >= 3               | Milliseconds     |
+| S3 S-IA              | For infrequently accessed data         | >= 3               | Milliseconds     |
+| S3 1Z-IA             | For re-creatable, less accessde data   | 1                  | Milliseconds     |
+| Amazon Glacier       | For archive data                       | >=3                | Minutes or hours |
+| Glacier Deep Archive | For lowest storage cost                | >=3                | 12 - 48 hours    |
 
 **Amazon S3 with Amazon SageMaker**
 
@@ -120,3 +121,43 @@ Amazon MSK is a fully managed service that makes it easy for you to build and ru
 
 #### Data Transformation
 
+**Amazon EMR**
+
+Amazon EMR is the industry-leading cloud big data platform for processing vast amounts of data using open source tools such as [Apache Spark](https://aws.amazon.com/emr/features/spark/), [Apache Hive](https://aws.amazon.com/emr/features/hive/), [Apache HBase](https://aws.amazon.com/emr/features/hbase/), [Apache Flink](https://aws.amazon.com/blogs/big-data/use-apache-flink-on-amazon-emr/), [Apache Hudi](https://aws.amazon.com/emr/features/hudi/), and [Presto](https://aws.amazon.com/emr/features/presto/). 
+
+![12](img/12.png)
+
+![13](img/13.png)
+
+<a name="eda"/>
+
+### Exploratory Data Analysis
+
+1. ***Preprocessing***
+
+**Amazon SageMaker Ground Truth**
+
+Amazon SageMaker Ground Truth is a fully managed [data labeling](https://aws.amazon.com/sagemaker/groundtruth/what-is-data-labeling/) service that makes it easy to build highly accurate training datasets for machine learning. 
+
+2. ***Feature Engineering***
+
+   **Dimension Reduction**
+
+   * t-Distributed Stochastic Neighbor Embedding (t-SNE)
+   * Principal Component Analysis (PCA)
+
+3. ***Visualization***
+
+   
+
+### Modelling
+
+***Amazon SageMaker***
+
+![14](img/14.png)
+
+***Amazon EC2 P3 Instances***
+
+Amazon EC2 P3 instances deliver high performance compute in the cloud with up to 8 NVIDIA® V100 Tensor Core GPUs and up to 100 Gbps of networking throughput for machine learning and HPC applications.
+
+***Hyperparameters Tuning***
