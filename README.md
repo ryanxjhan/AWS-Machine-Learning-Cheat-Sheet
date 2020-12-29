@@ -32,13 +32,13 @@
 * You can use Lake Formation to centrally define security, governance, and auditing policies in one place.
 * With Lake Formation you build a data catalog that describes the different data sets that are available along with which groups of users have access to each.
 
-![3](images/3.png)
+![3](img/3.png)
 
 2. *AWS S3*
 
 Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance.
 
-![2](images/2.png)
+![2](img/2.png)
 
 | Storage Classes | Use cases                              | Availability Zones | Access  Time     |
 | --------------- | -------------------------------------- | ------------------ | ---------------- |
@@ -54,7 +54,7 @@ Amazon Simple Storage Service (Amazon S3) is an object storage service that offe
 
 3. *Amazon FSx for Lustre*
 
-   ![1](images/1.png)
+   ![1](img/1.png)
 
    When your training data is already in Amazon S3 and you plan to run training jobs several times using different algorithms and parameters, consider using Amazon FSx for Lustre, a file system service. FSx for Lustre speeds up your training jobs by serving your Amazon S3 data to Amazon SageMaker at high speeds. The first time you run a training job, FSx for Lustre automatically copies data from Amazon S3 and makes it available to Amazon SageMaker. You can use the same Amazon FSx file system for subsequent iterations of training jobs, preventing repeated downloads of common Amazon S3 objects.
 
