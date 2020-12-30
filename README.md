@@ -10,6 +10,8 @@
   * [Data Ingestion](#ingest)
   * [Data Transformation](#transform)
 * [Exploratory Data Analysis](#eda)
+* [Modelling](#model)
+* [ML Implementation and Operations](#op)
 
 <a name="overview"/>
 
@@ -148,7 +150,7 @@ Amazon SageMaker Ground Truth is a fully managed [data labeling](https://aws.ama
 
 3. ***Visualization***
 
-   
+<a name="model"/>
 
 ### Modelling
 
@@ -156,8 +158,48 @@ Amazon SageMaker Ground Truth is a fully managed [data labeling](https://aws.ama
 
 ![14](img/14.png)
 
+***Amazon SageMaker Estimators***
+
+* Local mode: without loading training data
+* Pipe mode: improve loading time 
+
+***Amazon SageMaker DeepAR Forecasting Algoirthm***
+
+The Amazon SageMaker DeepAR forecasting algorithm is a supervised learning algorithm for forecasting scalar (one-dimensional) **time series** using recurrent neural networks (RNN).
+
 ***Amazon EC2 P3 Instances***
 
 Amazon EC2 P3 instances deliver high performance compute in the cloud with up to 8 NVIDIA® V100 Tensor Core GPUs and up to 100 Gbps of networking throughput for machine learning and HPC applications.
 
 ***Hyperparameters Tuning***
+
+* Grid Search 
+* Random Search
+* Amazon SageMaker Automated Hyperparameter Tuning
+
+***Metrics***
+
+Precision: TP/(TP+FP)
+
+Recall/Sensitivity: TP/(TP+FN)
+
+Specificity: TN/(TN+FP)
+
+<a name="op"/>
+
+### ML Implementation and Operations
+
+***Queues***
+
+**Amazon SQS**
+
+![16](img/16.png)
+
+**Amazon CloudWatch**
+
+![17](img/17.png)
+
+**AWS CloudTrail**
+
+AWS CloudTrail captures API calls and related events made by or on behalf of your AWS account and delivers the log files to an Amazon S3 bucket that you specify.
+
