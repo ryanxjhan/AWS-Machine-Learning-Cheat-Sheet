@@ -7,6 +7,8 @@
 * [Overview](#overview)
 * [Data Engineering](#engi)
   * [Data Repositories](#repo)
+    * AWS Lake Formation
+    * AWS S3
   * [Data Ingestion](#ingest)
   * [Data Transformation](#transform)
 * [Exploratory Data Analysis](#eda)
@@ -39,24 +41,42 @@
 
 2. ***AWS S3***
 
-   Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance.
+- Backbone for AWS ML
+- Eleven 9 durability
+- Decoupling of storage (S3) to compute (EC2, Amazon Athena, Amazon Redshift Spectrum)
+- Support all file formats 
+- Partition (ex. by date) to speed up range queries 
 
 ![2](img/2.png)
 
-| Storage Classes      | Use cases                              | Availability Zones | Access  Time     |
-| -------------------- | -------------------------------------- | ------------------ | ---------------- |
-| S3 Standard          | For active, frequently accessed data   | >= 3               | Milliseconds     |
-| S3 INT               | For data with changing access patterns | >= 3               | Milliseconds     |
-| S3 S-IA              | For infrequently accessed data         | >= 3               | Milliseconds     |
-| S3 1Z-IA             | For re-creatable, less accessde data   | 1                  | Milliseconds     |
-| Amazon Glacier       | For archive data                       | >=3                | Minutes or hours |
-| Glacier Deep Archive | For lowest storage cost                | >=3                | 12 - 48 hours    |
+| Storage Classes         | Use cases                              | Availability Zones | Access  Time | Retrieval  Fee |
+| ----------------------- | -------------------------------------- | ------------------ | ------------ | -------------- |
+| S3 Standard             | For active, frequently accessed data   | >= 3               | Milliseconds | None           |
+| S3 Intelligent Tiering  | For data with changing access patterns | >= 3               | Milliseconds | None           |
+| S3 Standard-IA          | For infrequently accessed data         | >= 3               | Milliseconds | per GB         |
+| S3 One -IA              | For re-creatable, less accessde data   | 1                  | Milliseconds | per GB         |
+| S3 Glacier              | For archive data                       | >=3                | Minutes      | per GB         |
+| S3 Glacier Deep Archive | For lowest storage cost                | >=3                | Hours        | per GB         |
 
 **Amazon S3 with Amazon SageMaker**
 
 ![4](img/4.png)
 
-You can use Amazon S3 while you’re training your ML models with Amazon SageMaker. Amazon S3 is integrated with Amazon SageMaker to store your training data and model training output.
+**S3 Lifecycle Rules** 
+
+* Transition actions: objects transitioned to another storage class.
+* Expiration actions: objects deleted
+
+**S3 Encryption for Objects**
+
+* SSE-S3: encrypt using keys by AWS
+* SSE-KMS: use AWS Key Management Service to manage encryption
+* SSE-C: manage own keys
+
+**S3 Security**
+
+* User based: which API calls are allowed for a specific user
+* Resource based: bucket policies 
 
 3. ***Amazon FSx for Lustre***
 
